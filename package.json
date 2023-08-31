@@ -2,10 +2,24 @@
   "name": "registration",
   "version": "1.0.0",
   "description": "database project",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build-tsc": "tsc -w",
+  "run-watch": "nodemon ./dist",
+  "dev": "concurrently \"npm run build-tsc\"  \"npm run run-watch\""    
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Tarteel Tamimi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.5.7",
+    "concurrently": "^8.2.1",
+    "nodemon": "^3.0.1",
+    "typescript": "^5.2.2"
+  }
 }
