@@ -1,5 +1,6 @@
 import express from "express";
 import registerRouter from "./routers/register.js";
+import db from "./db/index.js";
 
 const app = express();
 const PORT = 3000;
@@ -18,4 +19,5 @@ app.use((req, res) => {
 
 app.listen(PORT, () => {
     console.log(`App is running and listening on port ${PORT}.`);
+    db.initialize();
 });
